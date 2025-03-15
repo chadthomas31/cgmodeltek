@@ -45,14 +45,14 @@ export default function Navigation() {
                     <div className="relative h-24 w-24">
                       <Image
                         src="/images/Logo/CGMTek-LOGO-1.png"
-                        alt="CG Model Tek Logo"
+                        alt="CG Model Tek LLC Logo"
                         fill
                         className="object-contain"
                         sizes="96px"
                         quality={100}
                       />
                     </div>
-                    <span className="text-3xl font-bold text-white">CG Model Tek</span>
+                    <span className="text-3xl font-bold text-white">CG Model Tek LLC</span>
                   </Link>
                 </div>
                 <div className="hidden md:ml-8 md:flex md:items-center md:space-x-6">
