@@ -1,24 +1,23 @@
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 
 const navigation = {
   main: [
     { name: 'Home', href: '/' },
-    { name: 'Services', href: '/services' },
-    { name: 'Portfolio', href: '/portfolio' },
     { name: 'About', href: '/about' },
+    { name: 'Equipment', href: '/equipment' },
+    { name: 'Services', href: '/services' },
     { name: 'Contact', href: '/contact' },
   ],
   services: [
-    { name: 'Wind Tunnel Models', href: '/services/wind-tunnel-models' },
-    { name: 'Rapid Prototyping', href: '/services/rapid-prototyping' },
-    { name: 'Engineering Services', href: '/services/engineering' },
-    { name: 'Quality Control', href: '/services/quality-control' },
+    { name: 'Wind Tunnel Models', href: '/services#wind-tunnel-models' },
+    { name: 'Rapid Prototyping', href: '/services#rapid-prototyping' },
+    { name: 'Engineering Services', href: '/services#engineering' },
+    { name: 'Quality Control', href: '/services#quality-control' },
   ],
   company: [
     { name: 'About Us', href: '/about' },
     { name: 'Our Team', href: '/about#team' },
     { name: 'Facilities', href: '/about#facilities' },
-    { name: 'Careers', href: '/careers' },
   ],
   legal: [
     { name: 'Privacy Policy', href: '/privacy' },
@@ -35,8 +34,8 @@ export default function Footer() {
       <div className="mx-auto max-w-7xl px-6 pb-8 pt-16 sm:pt-24 lg:px-8 lg:pt-32">
         <div className="xl:grid xl:grid-cols-3 xl:gap-8">
           <div className="space-y-8">
-            <Link to="/" className="text-2xl font-bold text-white">
-              CGModelTek
+            <Link href="/" className="text-2xl font-bold text-white">
+              CG Model Tek
             </Link>
             <p className="text-sm leading-6 text-gray-300">
               Precision engineering and prototyping solutions for aerospace, defense, and industrial applications.
@@ -57,7 +56,7 @@ export default function Footer() {
                 <ul role="list" className="mt-6 space-y-4">
                   {navigation.services.map((item) => (
                     <li key={item.name}>
-                      <Link to={item.href} className="text-sm leading-6 text-gray-300 hover:text-white">
+                      <Link href={item.href} className="text-sm leading-6 text-gray-300 hover:text-white">
                         {item.name}
                       </Link>
                     </li>
@@ -69,7 +68,7 @@ export default function Footer() {
                 <ul role="list" className="mt-6 space-y-4">
                   {navigation.company.map((item) => (
                     <li key={item.name}>
-                      <Link to={item.href} className="text-sm leading-6 text-gray-300 hover:text-white">
+                      <Link href={item.href} className="text-sm leading-6 text-gray-300 hover:text-white">
                         {item.name}
                       </Link>
                     </li>
@@ -83,7 +82,7 @@ export default function Footer() {
                 <ul role="list" className="mt-6 space-y-4">
                   {navigation.legal.map((item) => (
                     <li key={item.name}>
-                      <Link to={item.href} className="text-sm leading-6 text-gray-300 hover:text-white">
+                      <Link href={item.href} className="text-sm leading-6 text-gray-300 hover:text-white">
                         {item.name}
                       </Link>
                     </li>
@@ -95,9 +94,8 @@ export default function Footer() {
                 <ul role="list" className="mt-6 space-y-4">
                   <li>
                     <p className="text-sm leading-6 text-gray-300">
-                      1234 Industry Drive<br />
-                      Suite 100<br />
-                      City, State 12345
+                      207 Big Springs Avenue<br />
+                      Tullahoma, TN 37388
                     </p>
                   </li>
                   <li>
@@ -117,7 +115,7 @@ export default function Footer() {
         </div>
         <div className="mt-16 border-t border-white/10 pt-8 sm:mt-20 lg:mt-24">
           <p className="text-xs leading-5 text-gray-400">
-            &copy; {new Date().getFullYear()} CGModelTek, LLC. All rights reserved.
+            &copy; {new Date().getFullYear()} CG Model Tek, LLC. All rights reserved.
           </p>
         </div>
       </div>
