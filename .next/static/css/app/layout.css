@@ -728,6 +728,9 @@ video {
 .mt-8 {
   margin-top: 2rem;
 }
+.mb-8 {
+  margin-bottom: 2rem;
+}
 .block {
   display: block;
 }
@@ -782,6 +785,9 @@ video {
 .h-24 {
   height: 6rem;
 }
+.h-32 {
+  height: 8rem;
+}
 .min-h-screen {
   min-height: 100vh;
 }
@@ -808,6 +814,9 @@ video {
 }
 .w-24 {
   width: 6rem;
+}
+.w-32 {
+  width: 8rem;
 }
 .max-w-2xl {
   max-width: 42rem;

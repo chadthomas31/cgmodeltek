@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import { MapPinIcon, PhoneIcon, EnvelopeIcon } from '@heroicons/react/24/outline';
+import Image from 'next/image';
 
 export const metadata: Metadata = {
   title: 'Contact Us - CG Model Tek',
@@ -19,6 +20,18 @@ export default function ContactPage() {
 
         <div className="mx-auto mt-16 grid max-w-4xl grid-cols-1 gap-8 sm:mt-20 lg:grid-cols-2">
           <div className="bg-gray-900 p-8 rounded-2xl">
+            <div className="flex justify-center mb-8">
+              <div className="relative h-32 w-32">
+                <Image
+                  src="/images/Logo/CGMTek-LOGO-1.png"
+                  alt="CG Model Tek LLC Logo"
+                  fill
+                  className="object-contain"
+                  sizes="128px"
+                  quality={100}
+                />
+              </div>
+            </div>
             <div className="space-y-8">
               <div className="flex items-center gap-x-4">
                 <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary-600/10">
