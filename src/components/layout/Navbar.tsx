@@ -1,12 +1,12 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 
 const navigation = [
   { name: 'Home', href: '/' },
-  { name: 'Services', href: '/services' },
-  { name: 'Portfolio', href: '/portfolio' },
   { name: 'About', href: '/about' },
+  { name: 'Equipment', href: '/equipment' },
+  { name: 'Services', href: '/services' },
   { name: 'Contact', href: '/contact' },
 ];
 
@@ -17,8 +17,8 @@ export default function Navbar() {
     <header className="fixed w-full bg-white/90 backdrop-blur-sm z-50 shadow-sm">
       <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
         <div className="flex lg:flex-1">
-          <Link to="/" className="-m-1.5 p-1.5">
-            <span className="text-2xl font-bold text-primary-600">CGModelTek</span>
+          <Link href="/" className="-m-1.5 p-1.5">
+            <span className="text-2xl font-bold text-primary-600">CG Model Tek</span>
           </Link>
         </div>
         <div className="flex lg:hidden">
@@ -35,7 +35,7 @@ export default function Navbar() {
           {navigation.map((item) => (
             <Link
               key={item.name}
-              to={item.href}
+              href={item.href}
               className="text-sm font-semibold leading-6 text-gray-900 hover:text-primary-600 transition-colors"
             >
               {item.name}
@@ -44,7 +44,7 @@ export default function Navbar() {
         </div>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
           <Link
-            to="/contact"
+            href="/contact"
             className="rounded-md bg-primary-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-primary-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600"
           >
             Get a Quote
@@ -57,8 +57,8 @@ export default function Navbar() {
         <div className="fixed inset-0 bg-black/20 backdrop-blur-sm" aria-hidden="true" />
         <div className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
-            <Link to="/" className="-m-1.5 p-1.5">
-              <span className="text-2xl font-bold text-primary-600">CGModelTek</span>
+            <Link href="/" className="-m-1.5 p-1.5">
+              <span className="text-2xl font-bold text-primary-600">CG Model Tek</span>
             </Link>
             <button
               type="button"
@@ -75,7 +75,7 @@ export default function Navbar() {
                 {navigation.map((item) => (
                   <Link
                     key={item.name}
-                    to={item.href}
+                    href={item.href}
                     className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                     onClick={() => setMobileMenuOpen(false)}
                   >
@@ -85,7 +85,7 @@ export default function Navbar() {
               </div>
               <div className="py-6">
                 <Link
-                  to="/contact"
+                  href="/contact"
                   className="block rounded-md bg-primary-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-primary-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600"
                   onClick={() => setMobileMenuOpen(false)}
                 >
