@@ -79,16 +79,14 @@ export default function ContactPage() {
           </div>
 
           {/* Map */}
-          <div className="bg-gray-900 rounded-2xl overflow-hidden">
+          <div className="bg-gray-900 rounded-2xl overflow-hidden h-[400px]">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3262.8876567086395!2d-86.21433372432995!3d35.36423297247076!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88637eb8e7f2b3f7%3A0x86c6e8f0ad0e6c0!2s207%20Big%20Springs%20Ave%2C%20Tullahoma%2C%20TN%2037388!5e0!3m2!1sen!2sus!4v1710534245040!5m2!1sen!2sus"
-              width="100%"
-              height="100%"
-              style={{ border: 0, minHeight: '400px' }}
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1631.4434061770046!2d-86.21433372432995!3d35.36423297247076!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88637eb8e7f2b3f7%3A0x86c6e8f0ad0e6c0!2s207%20Big%20Springs%20Ave%2C%20Tullahoma%2C%20TN%2037388!5e0!3m2!1sen!2sus!4v1711466433633!5m2!1sen!2sus"
+              className="w-full h-full border-0"
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-            />
+            ></iframe>
           </div>
 
           {/* Contact Form Section */}
