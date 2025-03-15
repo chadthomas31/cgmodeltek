@@ -21,14 +21,15 @@ export default function ContactPage() {
         <div className="mx-auto mt-16 grid max-w-4xl grid-cols-1 gap-8 sm:mt-20 lg:grid-cols-2">
           <div className="bg-gray-900 p-8 rounded-2xl">
             <div className="flex justify-center mb-8">
-              <div className="relative h-32 w-32">
+              <div className="relative h-48 w-48">
                 <Image
-                  src="/images/Logo/CGMTek-LOGO-1.png"
+                  src="/images/Logo/cg_model_tek_new_logo.png"
                   alt="CG Model Tek LLC Logo"
                   fill
                   className="object-contain"
-                  sizes="128px"
+                  sizes="192px"
                   quality={100}
+                  priority
                 />
               </div>
             </div>
