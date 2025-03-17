@@ -108,9 +108,9 @@ export default function ContactContent() {
               <div>
                 <h3 className="text-lg font-semibold leading-8 text-white">Location</h3>
                 <address className="mt-2 text-base leading-7 text-gray-300 not-italic">
-                  <p>1234 Engineering Way</p>
-                  <p>Suite 100</p>
-                  <p>Dayton, OH 45402</p>
+                  <p>CG Model Tek LLC</p>
+                  <p>207 Big Springs Avenue</p>
+                  <p>Tullahoma, TN 37388</p>
                 </address>
               </div>
 
@@ -120,16 +120,16 @@ export default function ContactContent() {
                   <div className="mt-1">
                     <dt className="sr-only">Phone number</dt>
                     <dd>
-                      <a className="hover:text-white" href="tel:+1 (555) 234-5678">
-                        +1 (555) 234-5678
+                      <a className="hover:text-white" href="tel:+1234567890">
+                        (123) 456-7890
                       </a>
                     </dd>
                   </div>
                   <div className="mt-1">
                     <dt className="sr-only">Email</dt>
                     <dd>
-                      <a className="hover:text-white" href="mailto:contact@cgmodeltek.com">
-                        contact@cgmodeltek.com
+                      <a className="hover:text-white" href="mailto:info@cgmodeltek.com">
+                        info@cgmodeltek.com
                       </a>
                     </dd>
                   </div>
@@ -138,11 +138,11 @@ export default function ContactContent() {
 
               <div className="relative aspect-[4/3] overflow-hidden rounded-xl bg-gray-900/5 shadow-2xl ring-1 ring-gray-400/10">
                 <Script
-                  src={`https://maps.googleapis.com/maps/api/js?key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}`}
+                  src={`https://maps.googleapis.com/maps/api/js?key=AIzaSyD9c_FXbXM9VPkZia2caxSgBTyVF8P1DMg&libraries=places`}
                   strategy="lazyOnload"
                 />
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3051.838985557051!2d-84.1916!3d39.7589!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8840b0b0b0b0b0b0%3A0xb0b0b0b0b0b0b0b0!2sCG%20Model%20Tek!5e0!3m2!1sen!2sus!4v1647047047047!5m2!1sen!2sus"
+                  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyD9c_FXbXM9VPkZia2caxSgBTyVF8P1DMg&q=207+Big+Springs+Avenue,Tullahoma,TN+37388&zoom=16"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
