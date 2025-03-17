@@ -2,7 +2,6 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import Script from 'next/script';
 import StarryBackground from '@/components/ui/StarryBackground';
 import styles from '@/styles/starry-background.module.css';
 
@@ -137,12 +136,8 @@ export default function ContactContent() {
               </div>
 
               <div className="relative aspect-[4/3] overflow-hidden rounded-xl bg-gray-900/5 shadow-2xl ring-1 ring-gray-400/10">
-                <Script
-                  src={`https://maps.googleapis.com/maps/api/js?key=AIzaSyD9c_FXbXM9VPkZia2caxSgBTyVF8P1DMg&libraries=places`}
-                  strategy="lazyOnload"
-                />
                 <iframe
-                  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyD9c_FXbXM9VPkZia2caxSgBTyVF8P1DMg&q=207+Big+Springs+Avenue,Tullahoma,TN+37388&zoom=16"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3261.898442442937!2d-86.2345678!3d35.3621234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8863a0c0c0c0c0c0%3A0xc0c0c0c0c0c0c0c0!2sCG%20Model%20Tek%20LLC!5e0!3m2!1sen!2sus!4v1647047047047!5m2!1sen!2sus"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
