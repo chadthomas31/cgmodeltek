@@ -15,8 +15,49 @@ export default function ContactPage() {
         src={`https://maps.googleapis.com/maps/api/js?key=AIzaSyD9c_FXbXM9VPkZia2caxSgBTyVF8P1DMg&libraries=places`}
         strategy="lazyOnload"
       />
-      <div className="bg-gray-800 py-24 sm:py-32">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+      <style jsx>{`
+        @keyframes twinkle {
+          0% { opacity: 0; }
+          50% { opacity: 1; }
+          100% { opacity: 0; }
+        }
+        
+        .star {
+          position: absolute;
+          width: 2px;
+          height: 2px;
+          background: white;
+          border-radius: 50%;
+        }
+        
+        .star:nth-child(1) { top: 10%; left: 20%; animation: twinkle 3s infinite 0.5s; }
+        .star:nth-child(2) { top: 20%; left: 40%; animation: twinkle 3s infinite 1s; }
+        .star:nth-child(3) { top: 30%; left: 60%; animation: twinkle 3s infinite 1.5s; }
+        .star:nth-child(4) { top: 40%; left: 80%; animation: twinkle 3s infinite 2s; }
+        .star:nth-child(5) { top: 50%; left: 30%; animation: twinkle 3s infinite 2.5s; }
+        .star:nth-child(6) { top: 60%; left: 50%; animation: twinkle 3s infinite 3s; }
+        .star:nth-child(7) { top: 70%; left: 70%; animation: twinkle 3s infinite 3.5s; }
+        .star:nth-child(8) { top: 80%; left: 90%; animation: twinkle 3s infinite 4s; }
+        .star:nth-child(9) { top: 85%; left: 15%; animation: twinkle 3s infinite 4.5s; }
+        .star:nth-child(10) { top: 90%; left: 35%; animation: twinkle 3s infinite 5s; }
+        .star:nth-child(11) { top: 15%; left: 85%; animation: twinkle 3s infinite 5.5s; }
+        .star:nth-child(12) { top: 25%; left: 95%; animation: twinkle 3s infinite 6s; }
+        .star:nth-child(13) { top: 35%; left: 25%; animation: twinkle 3s infinite 6.5s; }
+        .star:nth-child(14) { top: 45%; left: 45%; animation: twinkle 3s infinite 7s; }
+        .star:nth-child(15) { top: 55%; left: 65%; animation: twinkle 3s infinite 7.5s; }
+        .star:nth-child(16) { top: 65%; left: 85%; animation: twinkle 3s infinite 8s; }
+        .star:nth-child(17) { top: 75%; left: 35%; animation: twinkle 3s infinite 8.5s; }
+        .star:nth-child(18) { top: 85%; left: 55%; animation: twinkle 3s infinite 9s; }
+        .star:nth-child(19) { top: 95%; left: 75%; animation: twinkle 3s infinite 9.5s; }
+        .star:nth-child(20) { top: 5%; left: 95%; animation: twinkle 3s infinite 10s; }
+      `}</style>
+      <div className="relative bg-gradient-to-b from-gray-900 via-blue-900 to-black min-h-screen py-24 sm:py-32 overflow-hidden">
+        <div className="absolute inset-0">
+          {[...Array(20)].map((_, i) => (
+            <div key={i} className="star" />
+          ))}
+        </div>
+        <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">Contact Us</h2>
             <p className="mt-2 text-lg leading-8 text-gray-300">

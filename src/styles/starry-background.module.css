@@ -1,0 +1,70 @@
+@keyframes twinkle {
+  0% { opacity: 0; }
+  50% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+@keyframes shooting-star {
+  0% {
+    transform: translateX(0) translateY(0) rotate(45deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(1000px) translateY(1000px) rotate(45deg);
+    opacity: 0;
+  }
+}
+
+.starryBackground {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 0 4px 1px rgba(255, 255, 255, 0.4);
+}
+
+.shootingStar {
+  position: absolute;
+  width: 100px;
+  height: 1px;
+  background: linear-gradient(90deg, white, transparent);
+  animation: shooting-star 3s linear infinite;
+  opacity: 0;
+}
+
+/* Star positions and animations */
+.star:nth-child(1) { top: 10%; left: 20%; animation: twinkle 3s infinite 0.5s; }
+.star:nth-child(2) { top: 20%; left: 40%; animation: twinkle 3s infinite 1s; }
+.star:nth-child(3) { top: 30%; left: 60%; animation: twinkle 3s infinite 1.5s; }
+.star:nth-child(4) { top: 40%; left: 80%; animation: twinkle 3s infinite 2s; }
+.star:nth-child(5) { top: 50%; left: 30%; animation: twinkle 3s infinite 2.5s; }
+.star:nth-child(6) { top: 60%; left: 50%; animation: twinkle 3s infinite 3s; }
+.star:nth-child(7) { top: 70%; left: 70%; animation: twinkle 3s infinite 3.5s; }
+.star:nth-child(8) { top: 80%; left: 90%; animation: twinkle 3s infinite 4s; }
+.star:nth-child(9) { top: 85%; left: 15%; animation: twinkle 3s infinite 4.5s; }
+.star:nth-child(10) { top: 90%; left: 35%; animation: twinkle 3s infinite 5s; }
+.star:nth-child(11) { top: 15%; left: 85%; animation: twinkle 3s infinite 5.5s; }
+.star:nth-child(12) { top: 25%; left: 95%; animation: twinkle 3s infinite 6s; }
+.star:nth-child(13) { top: 35%; left: 25%; animation: twinkle 3s infinite 6.5s; }
+.star:nth-child(14) { top: 45%; left: 45%; animation: twinkle 3s infinite 7s; }
+.star:nth-child(15) { top: 55%; left: 65%; animation: twinkle 3s infinite 7.5s; }
+.star:nth-child(16) { top: 65%; left: 85%; animation: twinkle 3s infinite 8s; }
+.star:nth-child(17) { top: 75%; left: 35%; animation: twinkle 3s infinite 8.5s; }
+.star:nth-child(18) { top: 85%; left: 55%; animation: twinkle 3s infinite 9s; }
+.star:nth-child(19) { top: 95%; left: 75%; animation: twinkle 3s infinite 9.5s; }
+.star:nth-child(20) { top: 5%; left: 95%; animation: twinkle 3s infinite 10s; }
+
+/* Shooting star positions and delays */
+.shootingStar:nth-child(21) { top: 15%; left: -100px; animation-delay: 0s; }
+.shootingStar:nth-child(22) { top: 35%; left: -100px; animation-delay: 4s; }
+.shootingStar:nth-child(23) { top: 55%; left: -100px; animation-delay: 8s; }
+.shootingStar:nth-child(24) { top: 75%; left: -100px; animation-delay: 12s; }
+.shootingStar:nth-child(25) { top: 25%; left: -100px; animation-delay: 16s; } 

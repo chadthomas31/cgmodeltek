@@ -11,6 +11,7 @@ import {
 } from '@heroicons/react/24/outline';
 import Link from 'next/link';
 import Image from 'next/image';
+import styles from '@/styles/starry-background.module.css';
 
 const features = [
   {
@@ -47,13 +48,17 @@ const features = [
 
 export default function Home() {
   return (
-    <div className="bg-gray-800">
+    <div className="bg-gradient-to-b from-gray-900 via-blue-900 to-black">
       {/* Hero section */}
-      <div className="relative isolate overflow-hidden bg-gray-800">
-        {/* Background pattern */}
-        <div className="absolute inset-0 -z-10">
-          <div className="absolute inset-0 bg-gradient-to-b from-primary-900/90 to-gray-800" />
-          <div className="absolute inset-0 bg-[radial-gradient(75%_75%_at_50%_0%,theme(colors.primary.600/40)_0%,theme(colors.gray.800/80)_100%)]" />
+      <div className="relative isolate overflow-hidden">
+        {/* Starry background */}
+        <div className={styles.starryBackground}>
+          {[...Array(20)].map((_, i) => (
+            <div key={`star-${i}`} className={styles.star} />
+          ))}
+          {[...Array(5)].map((_, i) => (
+            <div key={`shooting-star-${i}`} className={styles.shootingStar} />
+          ))}
         </div>
 
         <div className="mx-auto max-w-screen-xl w-full px-6 lg:px-8 py-24 lg:py-32">
@@ -108,7 +113,7 @@ export default function Home() {
       </div>
 
       {/* Feature section */}
-      <div className="mx-auto max-w-screen-xl px-6 py-24 sm:py-32 lg:px-8">
+      <div className="relative mx-auto max-w-screen-xl px-6 py-24 sm:py-32 lg:px-8">
         <div className="mx-auto max-w-2xl lg:text-center">
           <h2 className="text-base font-semibold leading-7 text-primary-400">Advanced Capabilities</h2>
           <p className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">
