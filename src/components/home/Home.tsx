@@ -11,7 +11,7 @@ import {
 } from '@heroicons/react/24/outline';
 import Link from 'next/link';
 import Image from 'next/image';
-import styles from '@/styles/starry-background.module.css';
+import StarryBackground from '@/components/ui/StarryBackground';
 
 const features = [
   {
@@ -52,14 +52,7 @@ export default function Home() {
       {/* Hero section */}
       <div className="relative isolate overflow-hidden">
         {/* Starry background */}
-        <div className={styles.starryBackground}>
-          {[...Array(20)].map((_, i) => (
-            <div key={`star-${i}`} className={styles.star} />
-          ))}
-          {[...Array(5)].map((_, i) => (
-            <div key={`shooting-star-${i}`} className={styles.shootingStar} />
-          ))}
-        </div>
+        <StarryBackground />
 
         <div className="mx-auto max-w-screen-xl w-full px-6 lg:px-8 py-24 lg:py-32">
           <div className="mx-auto max-w-screen-lg w-full">
