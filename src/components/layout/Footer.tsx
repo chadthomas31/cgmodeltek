@@ -1,11 +1,13 @@
 import Link from 'next/link';
-
 const navigation = {
   main: [
     { name: 'Home', href: '/' },
     { name: 'About', href: '/about' },
     { name: 'Equipment', href: '/equipment' },
     { name: 'Services', href: '/services' },
+    { name: 'Contact', href: '/contact' },
+  ],
+};
     { name: 'Contact', href: '/contact' },
   ],
   services: [
