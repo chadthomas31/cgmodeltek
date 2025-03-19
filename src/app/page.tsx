@@ -14,58 +14,55 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between">
       {/* Hero Section */}
-      <section className="w-full min-h-screen flex flex-col items-center justify-center text-center px-6 bg-gradient-to-b from-[#001b44] via-[#002c6a] to-[#003892] relative overflow-hidden">
+      <section className="w-full min-h-screen flex flex-col items-center justify-center text-center px-4 sm:px-6 py-16 sm:py-20 md:py-32 bg-gradient-to-b from-[#001b44] via-[#002c6a] to-[#003892] relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-[#4da8ff]/10 via-transparent to-transparent" />
         <TwinklingStars />
         <FlyingPlane />
         <div className="max-w-6xl mx-auto relative z-10">
-          <div className="space-y-8 mb-12">
-            <div className="flex justify-center mb-8">
-              <Image
-                src="/images/Logo/cg_logo.png"
-                alt="CG Model Tek Logo"
-                width={2000}
-                height={2000}
-                className="w-auto h-[320px] object-contain transition-all duration-300 hover:scale-105 hover:brightness-125"
-                style={{ filter: 'brightness(1.2)' }}
-              />
+          <div className="space-y-4 sm:space-y-6 md:space-y-8 mb-6 sm:mb-8 md:mb-12">
+            <div className="relative z-10 text-center">
+              <div className="flex justify-center mb-8">
+                <Image
+                  src="/images/Logo/cg_logo.png"
+                  alt="CG Model Tek Logo"
+                  width={200}
+                  height={200}
+                  className="w-auto h-[160px] sm:h-[200px] object-contain transition-all duration-300 hover:scale-105 hover:brightness-125"
+                  style={{ filter: 'brightness(1.2)' }}
+                />
+              </div>
+              <h1 className="text-2xl sm:text-3xl md:text-4xl font-orbitron text-white mb-4 animate-fade-in">
+                Revolutionizing Aerospace Innovation
+              </h1>
+              <p className="text-base sm:text-lg text-gray-300 mb-8 max-w-2xl mx-auto animate-fade-in-up">
+                Precision-crafted models for cutting-edge aviation.
+              </p>
             </div>
-            <h2 className="font-michroma text-2xl md:text-3xl text-[#4da8ff] tracking-[0.2em] uppercase animate-fade-in">
-              <span className="opacity-75">CG</span> <span className="text-[#4da8ff]">MODEL TEK</span>
-            </h2>
-            <h1 className="font-michroma text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-extrabold text-white tracking-tight leading-tight animate-fade-in-up">
-              Revolutionizing<br />
-              <span className="bg-gradient-to-r from-[#4da8ff] to-white bg-clip-text text-transparent">Aerospace</span><br />
-              Innovation
-            </h1>
-          </div>
-          <p className="text-xl md:text-2xl lg:text-3xl text-white/90 mb-12 max-w-4xl mx-auto font-light leading-relaxed animate-fade-in-up delay-200">
-            Precision-crafted models for cutting-edge aviation.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center animate-fade-in-up delay-300">
-            <Link
-              href="/contact"
-              className="group relative px-10 py-5 bg-gradient-to-r from-[#007BFF] to-[#4da8ff] text-white rounded-lg font-bold text-lg transition-all duration-300 hover:scale-105 shadow-lg shadow-[#4da8ff]/20 overflow-hidden"
-            >
-              <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-[#4da8ff] to-[#007BFF] transition-transform duration-500 transform translate-x-full group-hover:translate-x-0" />
-              <span className="relative flex items-center gap-2">
-                Request a Consultation
-                <svg className="w-5 h-5 transition-transform duration-300 transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </span>
-            </Link>
-            <Link
-              href="/services"
-              className="group px-10 py-5 bg-white/10 backdrop-blur-sm text-white rounded-lg font-bold text-lg border-2 border-white/20 transition-all duration-300 hover:scale-105 hover:bg-white/20 hover:border-white/30 shadow-lg shadow-black/5"
-            >
-              <span className="flex items-center gap-2">
-                Explore Capabilities
-                <svg className="w-5 h-5 transition-transform duration-300 transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </span>
-            </Link>
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 md:gap-6 justify-center items-center animate-fade-in-up delay-300">
+              <Link
+                href="/contact"
+                className="w-full sm:w-auto group relative px-4 sm:px-6 md:px-10 py-3 sm:py-4 md:py-5 bg-gradient-to-r from-[#007BFF] to-[#4da8ff] text-white rounded-lg font-bold text-sm sm:text-base md:text-lg transition-all duration-300 hover:scale-105 shadow-lg shadow-[#4da8ff]/20 overflow-hidden"
+              >
+                <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-[#4da8ff] to-[#007BFF] transition-transform duration-500 transform translate-x-full group-hover:translate-x-0" />
+                <span className="relative flex items-center justify-center gap-2">
+                  Request a Consultation
+                  <svg className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 transition-transform duration-300 transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </span>
+              </Link>
+              <Link
+                href="/services"
+                className="w-full sm:w-auto group px-4 sm:px-6 md:px-10 py-3 sm:py-4 md:py-5 bg-white/10 backdrop-blur-sm text-white rounded-lg font-bold text-sm sm:text-base md:text-lg border-2 border-white/20 transition-all duration-300 hover:scale-105 hover:bg-white/20 hover:border-white/30 shadow-lg shadow-black/5"
+              >
+                <span className="flex items-center justify-center gap-2">
+                  Explore Capabilities
+                  <svg className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 transition-transform duration-300 transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </span>
+              </Link>
+            </div>
           </div>
         </div>
       </section>
