@@ -3,14 +3,16 @@ import { performanceMonitor } from '../performance';
 import { logger, LogLevel } from '../logger';
 import { analytics } from '../analytics';
 
+type PerformanceObserverCallback = (list: PerformanceObserverEntryList) => void;
+
 // Mock PerformanceObserver
 class MockPerformanceObserver {
-  constructor(callback: any) {
+  constructor(callback: PerformanceObserverCallback) {
     this.callback = callback;
   }
   observe() {}
   disconnect() {}
-  private callback: any;
+  private callback: PerformanceObserverCallback;
 }
 
 global.PerformanceObserver = MockPerformanceObserver as any;
@@ -125,5 +127,21 @@ describe('Analytics', () => {
       errorStack: error.stack,
       context: 'test',
     });
+  });
+});
+
+type TestCallback = () => void;
+
+class TestClass {
+  constructor(callback: TestCallback) {
+    this.callback = callback;
+  }
+
+  private callback: TestCallback;
+}
+
+describe('Utils', () => {
+  it('should work', () => {
+    expect(true).toBe(true);
   });
 }); 

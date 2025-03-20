@@ -5,11 +5,13 @@ export enum LogLevel {
   ERROR = 'ERROR',
 }
 
+type LogData = string | number | boolean | null | undefined | Record<string, unknown>;
+
 export interface LogEntry {
   timestamp: string;
   level: LogLevel;
   message: string;
-  data?: any;
+  data?: LogData;
   error?: Error;
 }
 
@@ -27,7 +29,7 @@ class Logger {
     return Logger.instance;
   }
 
-  private formatMessage(level: LogLevel, message: string, data?: any, error?: Error): LogEntry {
+  private formatMessage(level: LogLevel, message: string, data?: LogData, error?: Error): LogEntry {
     return {
       timestamp: new Date().toISOString(),
       level,
@@ -44,7 +46,7 @@ class Logger {
     }
   }
 
-  private log(level: LogLevel, message: string, data?: any, error?: Error): void {
+  private log(level: LogLevel, message: string, data?: LogData, error?: Error): void {
     const entry = this.formatMessage(level, message, data, error);
     this.addLog(entry);
 
@@ -52,34 +54,38 @@ class Logger {
       const consoleMessage = `[${entry.timestamp}] ${level}: ${message}`;
       switch (level) {
         case LogLevel.DEBUG:
+          // eslint-disable-next-line no-console
           console.debug(consoleMessage, data);
           break;
         case LogLevel.INFO:
+          // eslint-disable-next-line no-console
           console.info(consoleMessage, data);
           break;
         case LogLevel.WARN:
+          // eslint-disable-next-line no-console
           console.warn(consoleMessage, data);
           break;
         case LogLevel.ERROR:
+          // eslint-disable-next-line no-console
           console.error(consoleMessage, error || data);
           break;
       }
     }
   }
 
-  public debug(message: string, data?: any): void {
+  public debug(message: string, data?: LogData): void {
     this.log(LogLevel.DEBUG, message, data);
   }
 
-  public info(message: string, data?: any): void {
+  public info(message: string, data?: LogData): void {
     this.log(LogLevel.INFO, message, data);
   }
 
-  public warn(message: string, data?: any): void {
+  public warn(message: string, data?: LogData): void {
     this.log(LogLevel.WARN, message, data);
   }
 
-  public error(message: string, error?: Error, data?: any): void {
+  public error(message: string, error?: Error, data?: LogData): void {
     this.log(LogLevel.ERROR, message, data, error);
   }
 

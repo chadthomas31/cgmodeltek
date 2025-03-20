@@ -4,6 +4,8 @@ import Image from 'next/image';
 import TwinklingStars from '@/components/ui/TwinklingStars';
 import ArchitecturalBackground from '@/components/ui/ArchitecturalBackground';
 import FlyingPlane from '@/components/ui/FlyingPlane';
+import StarryBackground from '@/components/ui/StarryBackground';
+import { motion } from 'framer-motion';
 
 export const metadata: Metadata = {
   title: 'CG Model Tek - Precision Engineering for Aerospace Excellence',
@@ -27,8 +29,9 @@ export default function Home() {
                   alt="CG Model Tek Logo"
                   width={200}
                   height={200}
-                  className="w-auto h-[160px] sm:h-[200px] object-contain transition-all duration-300 hover:scale-105 hover:brightness-125"
+                  className="w-auto h-[200px] sm:h-[240px] object-contain transition-all duration-300 hover:scale-105 hover:brightness-125"
                   style={{ filter: 'brightness(1.2)' }}
+                  priority
                 />
               </div>
               <h1 className="text-2xl sm:text-3xl md:text-4xl font-orbitron text-white mb-4 animate-fade-in">

@@ -1,54 +1,17 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
-import Script from 'next/script';
-
-declare global {
-  interface Window {
-    google: any;
-  }
-}
-
 export default function GoogleMap() {
-  const mapRef = useRef<HTMLDivElement>(null);
-
-  const onLoad = () => {
-    if (!mapRef.current) return;
-
-    const position = { lat: 35.3621234, lng: -86.2345678 }; // Tullahoma coordinates
-
-    const map = new window.google.maps.Map(mapRef.current, {
-      zoom: 15,
-      center: position,
-      mapId: 'DEMO_MAP_ID',
-      styles: [
-        {
-          featureType: 'all',
-          elementType: 'labels.text.fill',
-          stylers: [{ color: '#ffffff' }],
-        },
-      ],
-    });
-
-    new window.google.maps.Marker({
-      position,
-      map,
-      title: 'CG Model Tek LLC',
-    });
-  };
-
   return (
-    <>
-      <Script
-        src={`https://maps.googleapis.com/maps/api/js?key=AIzaSyDJPKU7BnC0vukNOxcLR5hQ1ZzM0KVMbGw&libraries=places`}
-        onLoad={onLoad}
-        strategy="lazyOnload"
+    <div className="relative w-full h-full rounded-xl" style={{ minHeight: '300px' }}>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3261.898442442968!2d-86.23675642499999!3d35.3621234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8864c0c0c0c0c0c0%3A0x0!2zMzXCsDIxJzQ0LjAiTiA4NsKwMTQnMDQuMyJX!5e0!3m2!1sen!2sus!4v1645481234567!5m2!1sen!2sus"
+        width="100%"
+        height="100%"
+        style={{ border: 0, borderRadius: '0.75rem' }}
+        allowFullScreen
+        loading="lazy"
+        referrerPolicy="no-referrer-when-downgrade"
       />
-      <div
-        ref={mapRef}
-        className="w-full h-full rounded-xl"
-        style={{ minHeight: '300px' }}
-      />
-    </>
+    </div>
   );
 } 

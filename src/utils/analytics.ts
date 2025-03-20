@@ -1,8 +1,21 @@
 import { logger } from './logger';
 
+type AnalyticsProperties = {
+  url?: string;
+  title?: string;
+  referrer?: string;
+  screenWidth?: number;
+  screenHeight?: number;
+  elementId?: string;
+  interactionType?: string;
+  errorMessage?: string;
+  errorStack?: string;
+  [key: string]: string | number | undefined;
+};
+
 export interface AnalyticsEvent {
   eventName: string;
-  properties?: Record<string, any>;
+  properties?: AnalyticsProperties;
   timestamp?: string;
 }
 
@@ -59,7 +72,7 @@ class Analytics {
     }
   }
 
-  public track(eventName: string, properties?: Record<string, any>): void {
+  public track(eventName: string, properties?: AnalyticsProperties): void {
     const event: AnalyticsEvent = {
       eventName,
       properties,
@@ -75,7 +88,7 @@ class Analytics {
   public trackUserInteraction(
     elementId: string,
     interactionType: string,
-    properties?: Record<string, any>
+    properties?: AnalyticsProperties
   ): void {
     this.track('user_interaction', {
       elementId,
@@ -84,7 +97,7 @@ class Analytics {
     });
   }
 
-  public trackError(error: Error, properties?: Record<string, any>): void {
+  public trackError(error: Error, properties?: AnalyticsProperties): void {
     this.track('error', {
       errorMessage: error.message,
       errorStack: error.stack,

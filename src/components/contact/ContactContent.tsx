@@ -4,9 +4,20 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import StarryBackground from '@/components/ui/StarryBackground';
 import GoogleMap from '@/components/ui/GoogleMap';
-import styles from '@/styles/starry-background.module.css';
+import { FormEvent } from 'react';
+
+interface ContactFormData {
+  name: string;
+  email: string;
+  message: string;
+}
 
 export default function ContactContent() {
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    // Handle form submission
+  };
+
   return (
     <div className="relative min-h-screen bg-gradient-to-b from-gray-900 via-blue-900 to-black">
       {/* Starry background */}
@@ -22,11 +33,11 @@ export default function ContactContent() {
             className="flex items-center gap-x-6"
           >
             <Image
-              src="/images/logo.png"
+              src="/images/logo.svg"
               alt="CG Model Tek Logo"
               width={48}
               height={48}
-              className="h-12 w-auto"
+              className="rounded-lg"
             />
             <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">Contact Us</h2>
           </motion.div>
@@ -47,7 +58,7 @@ export default function ContactContent() {
           className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:mx-0 lg:mt-10 lg:max-w-none lg:grid-cols-12"
         >
           <div className="lg:col-span-7">
-            <form action="#" method="POST" className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium leading-6 text-white">
                   Name
