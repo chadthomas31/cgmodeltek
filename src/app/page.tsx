@@ -15,9 +15,15 @@ export default function Home() {
     <main className="flex min-h-screen flex-col items-center justify-between">
       {/* Hero Section */}
       <section className="w-full min-h-screen flex flex-col items-center justify-center text-center px-4 sm:px-6 py-16 sm:py-20 md:py-32 bg-gradient-to-b from-[#001b44] via-[#002c6a] to-[#003892] relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-[#4da8ff]/5 via-transparent to-transparent" />
-        <TwinklingStars />
-        <FlyingPlane />
+        {/* Background overlay with improved opacity and z-index */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-[#4da8ff]/10 via-transparent to-transparent z-0" />
+        <div className="absolute inset-0 bg-black/20 z-0" /> {/* Add subtle dark overlay for better contrast */}
+        <div className="absolute inset-0 z-0">
+          <TwinklingStars />
+        </div>
+        <div className="absolute inset-0 z-0">
+          <FlyingPlane />
+        </div>
         <div className="max-w-6xl mx-auto relative z-10">
           <div className="space-y-4 sm:space-y-6 md:space-y-8 mb-6 sm:mb-8 md:mb-12">
             <div className="relative z-10 text-center">
@@ -27,22 +33,22 @@ export default function Home() {
                   alt="CG Model Tek Logo"
                   width={200}
                   height={200}
-                  className="w-auto h-[240px] sm:h-[280px] md:h-[320px] object-contain transition-all duration-300 hover:scale-105 hover:brightness-125"
-                  style={{ filter: 'brightness(1.2)' }}
+                  className="w-auto h-[180px] sm:h-[240px] md:h-[280px] lg:h-[320px] object-contain transition-all duration-300 hover:scale-105"
+                  style={{ filter: 'brightness(1.1) contrast(1.1)' }}
                   priority
                 />
               </div>
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-orbitron text-white mb-6 animate-fade-in">
-                Revolutionizing <span className="bg-gradient-to-r from-orange-900 via-orange-500 to-white bg-clip-text text-transparent">Aerospace</span> Innovation
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-orbitron text-white mb-6 animate-fade-in drop-shadow-lg">
+                Revolutionizing <span className="bg-gradient-to-r from-orange-900 via-orange-500 to-white bg-clip-text text-transparent drop-shadow-lg">Aerospace</span> Innovation
               </h1>
-              <p className="text-lg sm:text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl mx-auto animate-fade-in-up">
+              <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-200 mb-8 max-w-2xl mx-auto animate-fade-in-up drop-shadow-lg">
                 Precision-crafted models for cutting-edge aviation.
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 md:gap-6 justify-center items-center animate-fade-in-up delay-300">
               <Link
                 href="/contact"
-                className="w-full sm:w-auto group relative px-4 sm:px-6 md:px-10 py-3 sm:py-4 md:py-5 bg-gradient-to-r from-[#007BFF] to-[#4da8ff] text-white rounded-lg font-bold text-sm sm:text-base md:text-lg transition-all duration-300 hover:scale-105 shadow-lg shadow-[#4da8ff]/10 overflow-hidden"
+                className="w-full sm:w-auto group relative px-4 sm:px-6 md:px-10 py-3 sm:py-4 md:py-5 bg-gradient-to-r from-[#007BFF] to-[#4da8ff] text-white rounded-lg font-bold text-sm sm:text-base md:text-lg transition-all duration-300 hover:scale-105 shadow-lg shadow-[#4da8ff]/20 overflow-hidden"
               >
                 <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-[#4da8ff] to-[#007BFF] transition-transform duration-500 transform translate-x-full group-hover:translate-x-0" />
                 <span className="relative flex items-center justify-center gap-2">
@@ -54,7 +60,7 @@ export default function Home() {
               </Link>
               <Link
                 href="/services"
-                className="w-full sm:w-auto group px-4 sm:px-6 md:px-10 py-3 sm:py-4 md:py-5 bg-white/10 backdrop-blur-sm text-white rounded-lg font-bold text-sm sm:text-base md:text-lg border-2 border-white/20 transition-all duration-300 hover:scale-105 hover:bg-white/20 hover:border-white/30 shadow-lg shadow-black/5"
+                className="w-full sm:w-auto group px-4 sm:px-6 md:px-10 py-3 sm:py-4 md:py-5 bg-white/10 backdrop-blur-md text-white rounded-lg font-bold text-sm sm:text-base md:text-lg border-2 border-white/30 transition-all duration-300 hover:scale-105 hover:bg-white/20 hover:border-white/40 shadow-lg shadow-black/10"
               >
                 <span className="flex items-center justify-center gap-2">
                   Explore Capabilities
