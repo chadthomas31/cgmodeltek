@@ -15,7 +15,8 @@ class MockPerformanceObserver {
   private callback: PerformanceObserverCallback;
 }
 
-global.PerformanceObserver = MockPerformanceObserver as any;
+// Type assertion for the mock
+global.PerformanceObserver = MockPerformanceObserver as unknown as typeof PerformanceObserver;
 
 describe('Performance Monitor', () => {
   beforeEach(() => {
@@ -129,16 +130,6 @@ describe('Analytics', () => {
     });
   });
 });
-
-type TestCallback = () => void;
-
-class TestClass {
-  constructor(callback: TestCallback) {
-    this.callback = callback;
-  }
-
-  private callback: TestCallback;
-}
 
 describe('Utils', () => {
   it('should work', () => {

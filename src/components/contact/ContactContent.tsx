@@ -6,12 +6,6 @@ import StarryBackground from '@/components/ui/StarryBackground';
 import GoogleMap from '@/components/ui/GoogleMap';
 import { FormEvent } from 'react';
 
-interface ContactFormData {
-  name: string;
-  email: string;
-  message: string;
-}
-
 export default function ContactContent() {
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();

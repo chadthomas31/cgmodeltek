@@ -90,8 +90,8 @@ export default function Navigation() {
           ${isOpen ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0 pointer-events-none'}
         `}
       >
-        <div className="flex flex-col h-full">
-          <div className="flex justify-between items-center p-4 border-b border-white/10">
+        <div className="flex flex-col min-h-screen">
+          <div className="flex justify-between items-center p-3 border-b border-white/10">
             <Link
               href="/" 
               className="flex items-center group"
@@ -101,7 +101,7 @@ export default function Navigation() {
                 alt="CG Model Tek Logo"
                 width={90}
                 height={90}
-                className="w-auto h-12 object-contain transition-all duration-300 group-hover:scale-105 group-hover:brightness-125"
+                className="w-auto h-10 object-contain transition-all duration-300 group-hover:scale-105 group-hover:brightness-125"
                 style={{ filter: 'brightness(1.2)' }}
               />
             </Link>
@@ -110,18 +110,18 @@ export default function Navigation() {
               className="inline-flex items-center justify-center p-2 rounded-full text-white hover:text-[#4da8ff] hover:bg-white/5 focus:outline-none transition-all duration-300"
             >
               <span className="sr-only">Close menu</span>
-              <svg className="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+              <svg className="h-5 w-5" stroke="currentColor" fill="none" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
           </div>
-          <div className="flex-1 flex flex-col justify-center items-center space-y-6 px-4">
+          <div className="flex flex-col justify-start items-center space-y-4 py-6 px-4">
             {navigation.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
                 className={`
-                  text-xl font-michroma text-center w-full py-3
+                  text-lg font-michroma text-center w-full py-2
                   transition-all duration-300 relative group
                   ${pathname === item.href 
                     ? 'text-[#4da8ff] font-semibold' 
@@ -139,15 +139,15 @@ export default function Navigation() {
               </Link>
             ))}
           </div>
-          <div className="p-4 border-t border-white/10">
+          <div className="mt-auto p-3 border-t border-white/10">
             <div className="flex justify-center space-x-6">
               <a href="tel:+1234567890" className="text-white hover:text-[#4da8ff] transition-colors duration-300">
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
               </a>
               <a href="mailto:contact@cgmodeltek.com" className="text-white hover:text-[#4da8ff] transition-colors duration-300">
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
               </a>

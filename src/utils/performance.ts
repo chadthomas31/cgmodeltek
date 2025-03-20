@@ -121,7 +121,21 @@ class PerformanceMonitor {
 
   private logMetric(name: string, value: number): void {
     if (process.env.NODE_ENV === 'development') {
-      console.log(`Performance Metric - ${name}:`, value);
+      // Use a more appropriate logging mechanism
+      const message = `Performance Metric - ${name}: ${value}`;
+      // You could use a proper logging service here
+      // For now, we'll use a more structured approach
+      const logEntry = {
+        timestamp: new Date().toISOString(),
+        level: 'info',
+        category: 'performance',
+        message,
+        metric: { name, value }
+      };
+      // Log to development tools
+      if (typeof window !== 'undefined' && window.console) {
+        window.console.info(logEntry);
+      }
     }
     // Here you could send the metrics to your analytics service
     // Example: analytics.track('performance_metric', { name, value });

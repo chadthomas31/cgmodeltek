@@ -4,8 +4,6 @@ import Image from 'next/image';
 import TwinklingStars from '@/components/ui/TwinklingStars';
 import ArchitecturalBackground from '@/components/ui/ArchitecturalBackground';
 import FlyingPlane from '@/components/ui/FlyingPlane';
-import StarryBackground from '@/components/ui/StarryBackground';
-import { motion } from 'framer-motion';
 
 export const metadata: Metadata = {
   title: 'CG Model Tek - Precision Engineering for Aerospace Excellence',
@@ -17,7 +15,7 @@ export default function Home() {
     <main className="flex min-h-screen flex-col items-center justify-between">
       {/* Hero Section */}
       <section className="w-full min-h-screen flex flex-col items-center justify-center text-center px-4 sm:px-6 py-16 sm:py-20 md:py-32 bg-gradient-to-b from-[#001b44] via-[#002c6a] to-[#003892] relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-[#4da8ff]/10 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-[#4da8ff]/5 via-transparent to-transparent" />
         <TwinklingStars />
         <FlyingPlane />
         <div className="max-w-6xl mx-auto relative z-10">
@@ -29,22 +27,22 @@ export default function Home() {
                   alt="CG Model Tek Logo"
                   width={200}
                   height={200}
-                  className="w-auto h-[200px] sm:h-[240px] object-contain transition-all duration-300 hover:scale-105 hover:brightness-125"
+                  className="w-auto h-[240px] sm:h-[280px] md:h-[320px] object-contain transition-all duration-300 hover:scale-105 hover:brightness-125"
                   style={{ filter: 'brightness(1.2)' }}
                   priority
                 />
               </div>
-              <h1 className="text-2xl sm:text-3xl md:text-4xl font-orbitron text-white mb-4 animate-fade-in">
-                Revolutionizing Aerospace Innovation
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-orbitron text-white mb-6 animate-fade-in">
+                Revolutionizing <span className="bg-gradient-to-r from-orange-900 via-orange-500 to-white bg-clip-text text-transparent">Aerospace</span> Innovation
               </h1>
-              <p className="text-base sm:text-lg text-gray-300 mb-8 max-w-2xl mx-auto animate-fade-in-up">
+              <p className="text-lg sm:text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl mx-auto animate-fade-in-up">
                 Precision-crafted models for cutting-edge aviation.
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 md:gap-6 justify-center items-center animate-fade-in-up delay-300">
               <Link
                 href="/contact"
-                className="w-full sm:w-auto group relative px-4 sm:px-6 md:px-10 py-3 sm:py-4 md:py-5 bg-gradient-to-r from-[#007BFF] to-[#4da8ff] text-white rounded-lg font-bold text-sm sm:text-base md:text-lg transition-all duration-300 hover:scale-105 shadow-lg shadow-[#4da8ff]/20 overflow-hidden"
+                className="w-full sm:w-auto group relative px-4 sm:px-6 md:px-10 py-3 sm:py-4 md:py-5 bg-gradient-to-r from-[#007BFF] to-[#4da8ff] text-white rounded-lg font-bold text-sm sm:text-base md:text-lg transition-all duration-300 hover:scale-105 shadow-lg shadow-[#4da8ff]/10 overflow-hidden"
               >
                 <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-[#4da8ff] to-[#007BFF] transition-transform duration-500 transform translate-x-full group-hover:translate-x-0" />
                 <span className="relative flex items-center justify-center gap-2">
